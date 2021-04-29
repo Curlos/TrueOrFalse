@@ -14,5 +14,19 @@ body {
 }
 
 #comparison-result {
+    font-size: 30px;
     display: None;
+    margin: 1%;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.true {
+    background-color: #b4edb4;
+    border: 2px solid green;
+}
+
+.false {
+    background-color: #f0b2a5;
+    border: 2px solid red;
 }

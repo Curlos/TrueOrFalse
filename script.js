@@ -3,13 +3,54 @@ document.getElementById('convert-json').addEventListener('click', () => {
     let secondString = document.getElementById('second-string').value.trim();
     let comparisonOperator = document.getElementById('comparison-operator').value;
 
-    console.log([firstString]);
-    console.log([secondString]);
-    console.log([comparisonOperator]);
+    let result = compareStrings(firstString, secondString, comparisonOperator);
+
+    displayComparisonResult(result);
 });
 
 
-const displayComparisonResult = () => {
+const displayComparisonResult = (result) => {
     let comparisonResultDiv = document.getElementById('comparison-result');
     comparisonResultDiv.style.display = "block";
+
+    comparisonResultDiv.innerHTML = String(result).toUpperCase();
+    changeResultCSS(result);
+}
+
+const changeResultCSS = (result) => {
+    let comparisonResultDiv = document.getElementById('comparison-result');
+
+    if (result == true) {
+        if (comparisonResultDiv.classList.contains('false')) {
+            comparisonResultDiv.classList.remove('false');
+        }
+        comparisonResultDiv.classList.add('true');
+
+    } else if (result == false) {
+        if (comparisonResultDiv.classList.contains('true')) {
+            comparisonResultDiv.classList.remove('true');
+        }
+        comparisonResultDiv.classList.add('false');
+    }
+}
+
+const compareStrings = (firstString, secondString, comparisonOperator) => {
+    switch (comparisonOperator) {
+        case "==":
+            return firstString == secondString;
+        case "===":
+            return firstString === secondString;
+        case "!=":
+            return firstString != secondString;
+        case "!==":
+            return firstString !== secondString;
+        case "<":
+            return firstString < secondString;
+        case ">":
+            return firstString > secondString;
+        case ">=":
+            return firstString >= secondString;
+        case "<=":
+            return firstString <= secondString;
+    }
 }
