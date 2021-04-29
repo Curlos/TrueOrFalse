@@ -9,14 +9,27 @@
 </head>
 <body>
     <h1>True or False</h1>
-
+    <hr>
     <p>Enter the first string:</p>
-    <input type="text" id="first-string" >
+    <input type="text" id="first-string"><br>
+
+    <select name="comparison-operator" id="comparison-operator">
+        <option value="==">==</option>
+        <option value="===">===</option>
+        <option value="!=">!=</option>
+        <option value="!==">!==</option>
+        <option value="<"><</option>
+        <option value=">">></option>
+        <option value=">=">=></option>
+        <option value="<="><=</option>
+        <option value="?">?</option>
+    </select>
+
     <p>Enter the second string:</p>
     <input type="text" id="second-string"><br>
 
-    <input type="submit" id="convert-json" value="Compare two strings"><br>
-    <div id="comparison-result">True</div>
+    <input type="submit" id="convert-json" value="Compare two strings">
+    <div id="comparison-result"></div>
     
 
     <script src="script.js"></script>
